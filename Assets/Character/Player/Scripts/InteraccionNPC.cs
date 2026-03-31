@@ -1,15 +1,53 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class InteraccionNPC : MonoBehaviour
 {
-    public float interactionRange = 2f; // distancia para interactuar
+    public float interactionRange = 2f;
     public KeyCode interactionKey = KeyCode.E;
+
+    public GameObject dialogCanvas;
+    public TMP_Text nameText;
+    public TMP_Text dialogText;
+
+    private NPC currentNPC;
+    private int dialogIndex = 0;
+    private bool isTalking = false;
+
+    public float typingSpeed = 0.02f; // velocidad de escritura
+
+    private Coroutine typingCoroutine;
+    private bool isTyping = false;
 
     void Update()
     {
         if (Input.GetKeyDown(interactionKey))
         {
-            TryInteract();
+            if (isTalking)
+            {
+                NextDialog();
+            }
+            else
+            {
+                TryInteract();
+            }
+        }
+
+        if (isTalking && currentNPC != null)
+        {
+            float distance = Vector3.Distance(transform.position, currentNPC.transform.position);
+
+            if (distance > interactionRange + 1f) // margen extra opcional
+            {
+                EndDialog();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EndDialog();
         }
     }
 
@@ -23,21 +61,81 @@ public class InteraccionNPC : MonoBehaviour
 
             if (npc != null)
             {
-                // Dirección hacia el NPC
                 Vector3 directionToNPC = (npc.transform.position - transform.position).normalized;
-
-                // Ángulo entre hacia donde miras y el NPC
                 float dot = Vector3.Dot(transform.forward, directionToNPC);
 
-                // Si está mirando suficientemente hacia el NPC
-                if (dot > 0.7f) // puedes ajustar este valor
+                if (dot > 0.7f)
                 {
-                    npc.Interact();
+                    StartDialog(npc);
                     return;
                 }
             }
         }
     }
+
+    void StartDialog(NPC npc)
+    {
+        currentNPC = npc;
+        dialogIndex = 0;
+        isTalking = true;
+
+        dialogCanvas.SetActive(true);
+        nameText.text = npc.npcName;
+
+        ShowCurrentDialog();
+    }
+
+    void NextDialog()
+    {
+        // 👇 si aún está escribiendo → termina instantáneamente
+        if (isTyping)
+        {
+            if (typingCoroutine != null)
+                StopCoroutine(typingCoroutine);
+
+            dialogText.text = currentNPC.dialogos[dialogIndex];
+            isTyping = false;
+            return;
+        }
+
+        dialogIndex++;
+
+        if (dialogIndex >= currentNPC.dialogos.Length)
+        {
+            EndDialog();
+            return;
+        }
+
+        ShowCurrentDialog();
+    }
+
+    void ShowCurrentDialog()
+    {
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
+        typingCoroutine = StartCoroutine(TypeText(currentNPC.dialogos[dialogIndex]));
+    }
+    IEnumerator TypeText(string text)
+    {
+        isTyping = true;
+        dialogText.text = "";
+
+        foreach (char letter in text)
+        {
+            dialogText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTyping = false;
+    }
+
+    void EndDialog()
+    {
+        isTalking = false;
+        dialogCanvas.SetActive(false);
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraMovimiento : MonoBehaviour
 {
     public Transform target; // El objetivo a seguir (el jugador)
     public Vector3 offset =  new Vector3(0,5,-5);// La distancia entre la cámara y el objetivo
