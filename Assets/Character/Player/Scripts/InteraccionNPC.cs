@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class InteraccionNPC : MonoBehaviour
 {
     public float interactionRange = 2f;
     public KeyCode interactionKey = KeyCode.E;
+    public InputActionReference Interactuar;
+    public InputActionReference Cancelar;
 
     public GameObject dialogCanvas;
     public TMP_Text nameText;
@@ -21,9 +24,22 @@ public class InteraccionNPC : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 
+    private void OnEnable()
+    {
+        Interactuar.action.Enable();
+        Cancelar.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Interactuar.action.Disable();
+        Cancelar.action.Disable();
+    }
+
+
     void Update()
     {
-        if (Input.GetKeyDown(interactionKey))
+        if (Interactuar.action.WasPressedThisFrame())
         {
             if (isTalking)
             {
@@ -45,7 +61,7 @@ public class InteraccionNPC : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Cancelar.action.WasPressedThisFrame())
         {
             EndDialog();
         }

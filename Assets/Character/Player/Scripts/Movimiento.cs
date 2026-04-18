@@ -1,4 +1,6 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class Movimiento : MonoBehaviour
@@ -9,11 +11,28 @@ public class Movimiento : MonoBehaviour
     private Vector3 lastDirection = Vector3.forward;
     private float bufferTimer = 0f;
 
-    private Vector2 moveInput; // 👈 NUEVO
 
-    void Update()
+
+    //Nuevo input system
+    private Rigidbody rb;
+
+    private Vector2 MoveDirection;
+
+    public InputActionReference move;
+
+    private void Start()
     {
-        Vector3 direction = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        MoveDirection = move.action.ReadValue<Vector2>();
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 direction = new Vector3(MoveDirection.x, 0f, MoveDirection.y).normalized;
 
         // ✅ SIEMPRE guardar dirección si hay input (aunque sea rápido)
         if (direction.magnitude > 0)
@@ -39,8 +58,5 @@ public class Movimiento : MonoBehaviour
     }
 
     // 👇 MÉTODO DEL NUEVO INPUT SYSTEM
-    public void OnMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-    }
+
 }

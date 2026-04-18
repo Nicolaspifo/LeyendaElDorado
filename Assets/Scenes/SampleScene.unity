@@ -396,8 +396,8 @@ GameObject:
   - component: {fileID: 102256317}
   - component: {fileID: 102256318}
   - component: {fileID: 102256319}
-  - component: {fileID: 102256320}
   - component: {fileID: 102256321}
+  - component: {fileID: 102256322}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -462,7 +462,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movimiento
   speed: 5
   inputBufferTime: 0.1
---- !u!114 &102256320
+  move: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!114 &102256321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102256316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ebd55b7bdf1c64882b8211cc898ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteraccionNPC
+  interactionRange: 2
+  interactionKey: 101
+  Interactuar: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  Cancelar: {fileID: 7727032971491509709, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  dialogCanvas: {fileID: 2105304061}
+  nameText: {fileID: 2081851833}
+  dialogText: {fileID: 1995836283}
+  typingSpeed: 0.02
+--- !u!114 &102256322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -492,24 +513,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &102256321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102256316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6ebd55b7bdf1c64882b8211cc898ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteraccionNPC
-  interactionRange: 2
-  interactionKey: 101
-  dialogCanvas: {fileID: 2105304061}
-  nameText: {fileID: 2081851833}
-  dialogText: {fileID: 1995836283}
-  typingSpeed: 0.02
 --- !u!1 &129721408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,6 +3188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenuPausa
   isPaused: 0
   menuPausaUI: {fileID: 1781882738}
+  pauseButton: {fileID: 5229784090450940597, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &1370443239
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,18 +1,33 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MenuPausa : MonoBehaviour
 {
     public bool isPaused = false;
     public GameObject menuPausaUI;
-     void Start()
+    public InputActionReference pauseButton;
+    void Start()
     {
         menuPausaUI.SetActive(false); // Asegúrate de que el menú de pausa esté desactivado al inicio
     }
 
+    private void OnEnable()
+    {
+        pauseButton.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        pauseButton.action.Disable();
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        
+        if (pauseButton.action.triggered)
         {
             if (isPaused)
             {
