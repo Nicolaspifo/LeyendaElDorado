@@ -5,37 +5,24 @@ public class IndicadorNPC : MonoBehaviour
     public float interactionRange = 2f;
     public GameObject interactionUI;
 
-    
+    public InteraccionNPC interaccion;
+
+
 
     void Update()
     {
         DetectPlayerLooking();
     }
 
-    
+
 
     void DetectPlayerLooking()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, interactionRange);
+        if (interaccion == null) return;
 
-        bool shouldShow = false;
+        NPC npc = interaccion.GetNPCDetectado();
 
-        foreach (Collider hit in hits)
-        {
-            if (hit.CompareTag("Player"))
-            {
-                // Dirección desde jugador hacia NPC
-                Vector3 directionToNPC = (transform.position - hit.transform.position).normalized;
-
-                float dot = Vector3.Dot(hit.transform.forward, directionToNPC);
-
-                if (dot > 0.7f)
-                {
-                    shouldShow = true;
-                    break;
-                }
-            }
-        }
+        bool shouldShow = (npc != null && npc.gameObject == gameObject);
 
         if (interactionUI != null)
             interactionUI.SetActive(shouldShow);
@@ -46,4 +33,5 @@ public class IndicadorNPC : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
+
 }

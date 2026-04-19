@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class InteraccionNPC : MonoBehaviour
 {
     public float interactionRange = 2f;
-    public KeyCode interactionKey = KeyCode.E;
     public InputActionReference Interactuar;
     public InputActionReference Cancelar;
 
@@ -67,25 +66,52 @@ public class InteraccionNPC : MonoBehaviour
         }
     }
 
-    void TryInteract()
+     public NPC GetNPCDetectado()
     {
+        float radio = 0.5f;
+        Vector3 origin = transform.position + Vector3.up * 1.5f;
+
+        RaycastHit hit;
+
+        // ✅ SphereCast
+        if (Physics.SphereCast(origin, radio, transform.forward, out hit, interactionRange))
+        {
+            NPC npc = hit.collider.GetComponent<NPC>();
+            if (npc != null)
+                return npc;
+        }
+
+        // ✅ Fallback: cercanos + dirección
         Collider[] hits = Physics.OverlapSphere(transform.position, interactionRange);
 
-        foreach (Collider hit in hits)
+        float mejorDot = 0.5f;
+        NPC mejorNPC = null;
+
+        foreach (Collider col in hits)
         {
-            NPC npc = hit.GetComponent<NPC>();
+            NPC npc = col.GetComponent<NPC>();
+            if (npc == null) continue;
 
-            if (npc != null)
+            Vector3 dirToNPC = (npc.transform.position - transform.position).normalized;
+            float dot = Vector3.Dot(transform.forward, dirToNPC);
+
+            if (dot > mejorDot)
             {
-                Vector3 directionToNPC = (npc.transform.position - transform.position).normalized;
-                float dot = Vector3.Dot(transform.forward, directionToNPC);
-
-                if (dot > 0.7f)
-                {
-                    StartDialog(npc);
-                    return;
-                }
+                mejorDot = dot;
+                mejorNPC = npc;
             }
+        }
+
+        return mejorNPC;
+    }
+
+    void TryInteract()
+    {
+        NPC npc = GetNPCDetectado();
+
+        if (npc != null)
+        {
+            StartDialog(npc);
         }
     }
 
