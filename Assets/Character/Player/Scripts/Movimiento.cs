@@ -7,22 +7,32 @@ public class Movimiento : MonoBehaviour
 {
     public float speed = 5f;
     public float inputBufferTime = 0.2f;
+    public float fuerzaSalto = 1f;
 
     private Vector3 lastDirection = Vector3.forward;
     private float bufferTimer = 0f;
 
-
-
-    //Nuevo input system
     private Rigidbody rb;
-
     private Vector2 MoveDirection;
 
     public InputActionReference move;
+    public InputActionReference Saltar;
+
+    private bool enSuelo = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void OnEnable()
+    {
+        Saltar.action.performed += SaltarAccion;
+    }
+
+    private void OnDisable()
+    {
+        Saltar.action.performed -= SaltarAccion;
     }
 
     private void Update()
@@ -34,13 +44,11 @@ public class Movimiento : MonoBehaviour
     {
         Vector3 direction = new Vector3(MoveDirection.x, 0f, MoveDirection.y).normalized;
 
-        // ✅ SIEMPRE guardar dirección si hay input (aunque sea rápido)
         if (direction.magnitude > 0)
         {
             lastDirection = direction;
             bufferTimer = inputBufferTime;
 
-            // Movimiento
             transform.Translate(direction * speed * Time.deltaTime, Space.World);
         }
         else
@@ -48,7 +56,6 @@ public class Movimiento : MonoBehaviour
             bufferTimer -= Time.deltaTime;
         }
 
-        // ✅ Rotación SIEMPRE basada en la última dirección válida
         if (lastDirection.magnitude > 0)
         {
             float angle = Mathf.Atan2(lastDirection.x, lastDirection.z) * Mathf.Rad2Deg;
@@ -57,6 +64,22 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    // 👇 MÉTODO DEL NUEVO INPUT SYSTEM
+    // 🔥 SALTO
+    private void SaltarAccion(InputAction.CallbackContext context)
+    {
+        if (enSuelo)
+        {
+            rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+            enSuelo = false;
+        }
+    }
 
+    // 👇 Detectar suelo
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            enSuelo = true;
+        }
+    }
 }
