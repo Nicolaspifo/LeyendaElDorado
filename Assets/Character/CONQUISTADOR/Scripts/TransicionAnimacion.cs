@@ -3,38 +3,42 @@ using UnityEngine;
 public class TransicionAnimacion : MonoBehaviour
 {
     Animator anim;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame  
     void Update()
     {
+        // Movimiento
         if (Input.GetKey("w"))
         {
             anim.SetBool("semueve", true);
-
         }
-
-        if (!Input.GetKey("w"))
+        else
         {
             anim.SetBool("semueve", false);
-
         }
 
+        // Recoger
         if (Input.GetKey("e"))
         {
-            anim.SetBool("recojerr", true);
-
+            anim.SetBool("recoger", true);
+        }
+        else
+        {
+            anim.SetBool("recoger", false);
         }
 
-        if (!Input.GetKey("e"))
+        // SALTO
+        if (Input.GetKey("space"))
         {
-            anim.SetBool("recojerr", false);
-
+            anim.SetBool("saltar", true);
+        }
+        else
+        {
+            anim.SetBool("saltar", false);
         }
     }
-
 }
