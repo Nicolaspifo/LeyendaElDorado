@@ -3,12 +3,13 @@ using UnityEngine.InputSystem;
 
 public class RecoleccionNotas : MonoBehaviour
 {
-    public int ContadorNotas = 0;
     public InputActionReference Interactuar;
 
     public float RangoDeInteraccion = 2f;
 
     public Transform player; // Referencia al player
+
+    public ContadorNotasObjetos contador;
 
     void Update()
     {
@@ -30,8 +31,8 @@ public class RecoleccionNotas : MonoBehaviour
         {
             if (hit.collider.gameObject == gameObject)
             {
-                ContadorNotas++;
-                Debug.Log("Nota recogida. Total: " + ContadorNotas);
+                contador.AgregarNota();
+                
                 Destroy(gameObject);
             }
         }
