@@ -1,8 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TransicionAnimacion : MonoBehaviour
 {
     Animator anim;
+    public InputActionReference Movimiento;
+    public InputActionReference Saltar;
+    public InputActionReference Intereactuar;
 
     void Start()
     {
@@ -12,7 +17,7 @@ public class TransicionAnimacion : MonoBehaviour
     void Update()
     {
         // Movimiento
-        if (Input.GetKey("w"))
+        if (Movimiento.action.IsPressed())
         {
             anim.SetBool("semueve", true);
         }
@@ -22,7 +27,7 @@ public class TransicionAnimacion : MonoBehaviour
         }
 
         // Recoger
-        if (Input.GetKey("e"))
+        if (Intereactuar.action.IsPressed())
         {
             anim.SetBool("recoger", true);
         }
@@ -32,7 +37,7 @@ public class TransicionAnimacion : MonoBehaviour
         }
 
         // SALTO
-        if (Input.GetKey("space"))
+        if (Saltar.action.IsPressed())
         {
             anim.SetBool("saltar", true);
         }
