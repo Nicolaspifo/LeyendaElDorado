@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class LimitadorFPS : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     private int LimiteFPS = 60;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
