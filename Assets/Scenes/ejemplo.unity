@@ -27165,24 +27165,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8caf5863f79378549979343d853af0b1, type: 2}
-<<<<<<< Updated upstream
-=======
-    - target: {fileID: -6714157840195985541, guid: 36d574e79b6b69b4db4033a870a83402, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.26
-      objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: -6167651984137777662, guid: 36d574e79b6b69b4db4033a870a83402, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c1e2793ffae73df47aac58593ef12cea, type: 2}
-<<<<<<< Updated upstream
-=======
-    - target: {fileID: -2019521954089812724, guid: 36d574e79b6b69b4db4033a870a83402, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.58
-      objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: -506694249207138401, guid: 36d574e79b6b69b4db4033a870a83402, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.85858
