@@ -23,6 +23,8 @@ public class InteraccionNPC : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 
+    public NavegacionInventario navegacionInventario;
+
     private void OnEnable()
     {
         Interactuar.action.Enable();
@@ -112,6 +114,14 @@ public class InteraccionNPC : MonoBehaviour
         if (npc != null)
         {
             StartDialog(npc);
+        }
+
+        
+        if (npc != null && npc.yainteractuado == false)
+        {
+            npc.yainteractuado = true;
+            if (navegacionInventario != null)
+                navegacionInventario.crearPersonajeUI(npc.npcName);
         }
     }
 

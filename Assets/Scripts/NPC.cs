@@ -6,6 +6,7 @@ public class NPC : MonoBehaviour
     [TextArea(2,5)] public string[] dialogos;
 
     public GameObject interactionUI;
+    public bool yainteractuado = false;
 
     public void ShowIndicator(bool show)
     {
