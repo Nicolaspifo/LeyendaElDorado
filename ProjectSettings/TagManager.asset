@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Suelo
+  - NPC interactuable
   layers:
   - Default
   - TransparentFX
