@@ -22,7 +22,6 @@ public class CamaraMovimiento_02 : MonoBehaviour
 
     private float rotacionX = 0f;
     private float rotacionY = 0f;
-    private bool rotandoConMouse = false;
 
     // Posición suavizada del target, separada por eje
     private Vector3 targetSmoothed;
@@ -34,30 +33,18 @@ public class CamaraMovimiento_02 : MonoBehaviour
 
         if (target != null)
             targetSmoothed = target.position;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            rotandoConMouse = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        if (Time.timeScale == 0f) return;
 
-        if (Input.GetMouseButtonUp(1))
-        {
-            rotandoConMouse = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-
-        if (rotandoConMouse)
-        {
-            rotacionY += Input.GetAxis("Mouse X") * sensibilidad;
-            rotacionX -= Input.GetAxis("Mouse Y") * sensibilidad;
-            rotacionX = Mathf.Clamp(rotacionX, limiteVerticalMin, limiteVerticalMax);
-        }
+        rotacionY += Input.GetAxis("Mouse X") * sensibilidad;
+        rotacionX -= Input.GetAxis("Mouse Y") * sensibilidad;
+        rotacionX = Mathf.Clamp(rotacionX, limiteVerticalMin, limiteVerticalMax);
     }
 
     private void LateUpdate()
