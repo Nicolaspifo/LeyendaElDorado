@@ -42,16 +42,19 @@ public class MenuInventario : MonoBehaviour
 
     void AbrirInventario()
     {
-        Time.timeScale = 0f; // Detiene el tiempo del juego
+        Time.timeScale = 0f;
         isInvetoryActive = true;
-        menuInventarioUI.SetActive(true); // Muestra el menú de pausa
-
+        menuInventarioUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void ResumeGame()
     {
-        Time.timeScale = 1f; // Reanuda el tiempo del juego
+        Time.timeScale = 1f;
         isInvetoryActive = false;
         menuInventarioUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

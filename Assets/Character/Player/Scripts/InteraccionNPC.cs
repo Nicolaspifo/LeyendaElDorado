@@ -25,6 +25,12 @@ public class InteraccionNPC : MonoBehaviour
 
     public NavegacionInventario navegacionInventario;
 
+    void Start()
+    {
+        if (navegacionInventario == null)
+            navegacionInventario = FindFirstObjectByType<NavegacionInventario>();
+    }
+
     private void OnEnable()
     {
         Interactuar.action.Enable();
