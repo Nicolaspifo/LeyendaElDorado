@@ -11,7 +11,7 @@ public class IndicadorNPC : MonoBehaviour
     // Prefab for a world-space canvas that will appear above the NPC
     public GameObject worldCanvasPrefab;
     // Local offset from the NPC's transform where the canvas will appear
-    public Vector3 canvasOffset = new Vector3(0.5f, 2f, 0f);
+    public Vector3 canvasOffset = new Vector3(0f, 0.57f, 0f);
 
     // Spawned instance of the world canvas (if any)
     GameObject spawnedWorldCanvas;
@@ -19,6 +19,13 @@ public class IndicadorNPC : MonoBehaviour
     void Update()
     {
         DetectPlayerLooking();
+
+        if (spawnedWorldCanvas != null && Camera.main != null)
+        {
+            spawnedWorldCanvas.transform.LookAt(Camera.main.transform);
+            spawnedWorldCanvas.transform.Rotate(0, 180, 0);
+        }
+            
     }
 
     void DetectPlayerLooking()
@@ -42,6 +49,7 @@ public class IndicadorNPC : MonoBehaviour
                 spawnedWorldCanvas = Instantiate(worldCanvasPrefab, transform);
                 spawnedWorldCanvas.transform.localPosition = canvasOffset;
                 spawnedWorldCanvas.transform.localRotation = Quaternion.identity;
+
             }
         }
         else
