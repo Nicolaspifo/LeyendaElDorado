@@ -14,6 +14,8 @@ public class MenuPausa_01 : MonoBehaviour
         menuPausaUI.SetActive(false);
         if (panelAjustes != null)
             panelAjustes.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnEnable() => pauseButton.action.Enable();
@@ -33,6 +35,8 @@ public class MenuPausa_01 : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         menuPausaUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ResumeGame()
@@ -42,6 +46,8 @@ public class MenuPausa_01 : MonoBehaviour
         menuPausaUI.SetActive(false);
         if (panelAjustes != null)
             panelAjustes.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void AbrirAjustes()

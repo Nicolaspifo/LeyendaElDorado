@@ -33,9 +33,6 @@ public class CamaraMovimiento_02 : MonoBehaviour
 
         if (target != null)
             targetSmoothed = target.position;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()
