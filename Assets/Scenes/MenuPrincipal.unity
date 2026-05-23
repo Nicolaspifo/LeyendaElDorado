@@ -615,7 +615,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1454182717}
   - {fileID: 486873007}
   - {fileID: 925646594}
   - {fileID: 1004799421}
@@ -1209,15 +1208,15 @@ MonoBehaviour:
   fadeTime: 3
   musicTracks:
   - zoneName: Ambiente_01
-    clip: {fileID: 8300000, guid: 6c2686e0a92342e4a80d104cf802e4b8, type: 3}
+    clip: {fileID: 8300000, guid: aa99e8a7805d9894c86a22df0259e18f, type: 3}
     volume: 0.5
     isOverlay: 0
   - zoneName: Ambiente_02
-    clip: {fileID: 8300000, guid: 64201f2c5e3aea44ea6537041f679687, type: 3}
+    clip: {fileID: 8300000, guid: e56959bb70ccd3e449278e292865499b, type: 3}
     volume: 0.18
     isOverlay: 0
   - zoneName: Ambiente_03
-    clip: {fileID: 8300000, guid: 9aed78c6f2d74bb4589d5e1fef41baa3, type: 3}
+    clip: {fileID: 8300000, guid: af61a8bd69962cd479ca6b5aa71a1ab9, type: 3}
     volume: 0.5
     isOverlay: 0
   - zoneName: Guerrero_01
@@ -1266,10 +1265,10 @@ MonoBehaviour:
     isOverlay: 1
   - zoneName: Fogata_01
     clip: {fileID: 8300000, guid: ded1b8a0e2d8d584dacfca526cc8bb1a, type: 3}
-    volume: 0.8
+    volume: 0.9
     isOverlay: 1
   - zoneName: Final_01
-    clip: {fileID: 8300000, guid: 51e476f18a032604b9670208a950c6c6, type: 3}
+    clip: {fileID: 8300000, guid: c368156411ef54843a0eacfc96b41856, type: 3}
     volume: 0.5
     isOverlay: 1
   - zoneName: MusicaIntro
@@ -1315,10 +1314,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneMusicMappings:
   - sceneName: MenuPrincipal
-    musicToPlay: {fileID: 8300000, guid: 6c2686e0a92342e4a80d104cf802e4b8, type: 3}
+    musicToPlay: {fileID: 8300000, guid: aa99e8a7805d9894c86a22df0259e18f, type: 3}
     volume: 0.4
   - sceneName: ejemplo
-    musicToPlay: {fileID: 8300000, guid: 64201f2c5e3aea44ea6537041f679687, type: 3}
+    musicToPlay: {fileID: 8300000, guid: e56959bb70ccd3e449278e292865499b, type: 3}
     volume: 0.2
   autoChangeMusic: 1
 --- !u!1 &1150900467
@@ -1708,6 +1707,7 @@ RectTransform:
   m_Children:
   - {fileID: 414220983}
   - {fileID: 382460967}
+  - {fileID: 1454182717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1740,6 +1740,8 @@ MonoBehaviour:
   colorA: {r: 1, g: 1, b: 1, a: 1}
   colorB: {r: 0.8018868, g: 0.71818924, b: 0.55602527, a: 1}
   velocidadColor: 0.25
+  imagenFadeNegro: {fileID: 1454182715}
+  velocidadFadeEscena: 0.5
 --- !u!1 &1454182714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,12 +1754,12 @@ GameObject:
   - component: {fileID: 1454182716}
   - component: {fileID: 1454182715}
   m_Layer: 5
-  m_Name: Imagen_01
+  m_Name: FondoNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1454182715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1778,7 +1780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c1fa309f91f25ae4f8d580189453dea1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 455151bc67f42614aae6c34b35588404, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1803,12 +1805,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454182714}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 414220983}
+  m_Father: {fileID: 1440252533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -21,6 +21,9 @@ public class MenuPrincipal : MonoBehaviour
     public Color colorB = Color.gray;
     public float velocidadColor = 1.0f;
     
+    [Header("Fade de Escena")]
+    public Image imagenFadeNegro;
+    public float velocidadFadeEscena = 1f;
     // Referencia a los gestores
     private bool mostrandoIntroduccion = false;  // Nueva variable para controlar la intro
     
@@ -45,6 +48,15 @@ public class MenuPrincipal : MonoBehaviour
         {
             panelMenuPrincipal.SetActive(true);
         }
+
+        // Asegurar que el fade empiece invisible
+        if (imagenFadeNegro != null)
+        {
+            imagenFadeNegro.gameObject.SetActive(false);
+            Color color = imagenFadeNegro.color;
+            color.a = 0f;
+            imagenFadeNegro.color = color;
+        }
     }
 
     private void Update()
@@ -59,7 +71,11 @@ public class MenuPrincipal : MonoBehaviour
                 Input.GetKeyDown(KeyCode.UpArrow) || 
                 Input.GetKeyDown(KeyCode.DownArrow) || 
                 Input.GetKeyDown(KeyCode.LeftArrow) || 
-                Input.GetKeyDown(KeyCode.RightArrow))
+                Input.GetKeyDown(KeyCode.W)|| 
+                Input.GetKeyDown(KeyCode.A) || 
+                Input.GetKeyDown(KeyCode.S) || 
+                Input.GetKeyDown(KeyCode.D) || 
+                Input.GetKeyDown(KeyCode.Mouse0))
             {
                 SiguienteImagenIntroduccion();
             }
@@ -236,10 +252,42 @@ public class MenuPrincipal : MonoBehaviour
     private void ContinuarAlJuego()
     {
         mostrandoIntroduccion = false;
+        StartCoroutine(CambiarEscenaConFade());
+    }
 
-        // Detener el overlay de intro antes de cambiar de escena
+    private IEnumerator CambiarEscenaConFade()
+    {
+        // Detener audio con fade
         if (SimpleAudioSystem.Instance != null)
-            SimpleAudioSystem.Instance.ExitMusicZone("MusicaIntro");
+        {
+            SimpleAudioSystem.Instance.StopMusic();
+            SimpleAudioSystem.Instance.StopAllOverlays();
+        }
+
+        // Fade in de la imagen negra (pantalla se oscurece)
+        if (imagenFadeNegro != null)
+        {
+            imagenFadeNegro.gameObject.SetActive(true);
+
+            float tiempo = 0f;
+            Color color = imagenFadeNegro.color;
+            color.a = 0f;
+            imagenFadeNegro.color = color;
+
+            while (tiempo < 1f)
+            {
+                tiempo += Time.deltaTime * velocidadFadeEscena;
+                color.a = Mathf.Clamp01(tiempo);
+                imagenFadeNegro.color = color;
+                yield return null;
+            }
+        }
+        else
+        {
+            // Si no hay imagen, solo esperar el audio
+            if (SimpleAudioSystem.Instance != null)
+                yield return new WaitForSeconds(SimpleAudioSystem.Instance.fadeTime);
+        }
 
         SceneManager.LoadScene("ejemplo");
     }
