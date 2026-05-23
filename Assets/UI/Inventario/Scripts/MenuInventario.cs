@@ -49,7 +49,7 @@ public class MenuInventario : MonoBehaviour
         Cursor.visible = true;
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
         isInvetoryActive = false;

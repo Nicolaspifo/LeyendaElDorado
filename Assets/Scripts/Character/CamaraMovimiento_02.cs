@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CamaraMovimiento_02 : MonoBehaviour
 {
@@ -41,6 +42,14 @@ public class CamaraMovimiento_02 : MonoBehaviour
 
         rotacionY += Input.GetAxis("Mouse X") * sensibilidad;
         rotacionX -= Input.GetAxis("Mouse Y") * sensibilidad;
+
+        if (Gamepad.current != null)
+        {
+            Vector2 stick = Gamepad.current.rightStick.ReadValue();
+            rotacionY += stick.x * sensibilidad;
+            rotacionX -= stick.y * sensibilidad;
+        }
+
         rotacionX = Mathf.Clamp(rotacionX, limiteVerticalMin, limiteVerticalMax);
     }
 

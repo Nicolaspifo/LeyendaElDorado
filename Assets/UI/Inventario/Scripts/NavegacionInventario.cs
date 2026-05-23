@@ -4,6 +4,7 @@ using UnityEngine;
 public class NavegacionInventario : MonoBehaviour
 {
     public GameObject PersonajesCanvas;
+    
 
     void Start()
     {
@@ -27,4 +28,6 @@ public class NavegacionInventario : MonoBehaviour
             Debug.LogWarning("No se encontró un hijo con el nombre: " + nombreNPC + " dentro de " + PersonajesCanvas.name);
         }
     }
+
+    
 }

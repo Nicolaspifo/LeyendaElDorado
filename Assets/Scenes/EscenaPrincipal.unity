@@ -7252,6 +7252,7 @@ GameObject:
   - component: {fileID: 260178989}
   - component: {fileID: 260178988}
   - component: {fileID: 260178987}
+  - component: {fileID: 260178991}
   m_Layer: 0
   m_Name: VolverBoton
   m_TagString: Untagged
@@ -7308,10 +7309,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -7322,7 +7323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 260178989}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002488738}
+        m_TargetAssemblyTypeName: MenuInventario, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &260178988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7376,6 +7389,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260178985}
   m_CullTransparentMesh: 1
+--- !u!114 &260178991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260178985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 0.3529412, g: 0.15686275, b: 0.007843138, a: 1}
+  colorHover: {r: 1, g: 0.7710955, b: 0.5707547, a: 1}
+  colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 0}
+  usarSonidoGlobal: 1
 --- !u!1 &261351840
 GameObject:
   m_ObjectHideFlags: 0
@@ -10504,7 +10536,7 @@ RectTransform:
   - {fileID: 77285126}
   - {fileID: 454241462}
   - {fileID: 1042623384}
-  m_Father: {fileID: 1203643008}
+  m_Father: {fileID: 2100662207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -14159,6 +14191,7 @@ GameObject:
   - component: {fileID: 454241465}
   - component: {fileID: 454241464}
   - component: {fileID: 454241463}
+  - component: {fileID: 454241467}
   m_Layer: 0
   m_Name: VolverBoton
   m_TagString: Untagged
@@ -14215,10 +14248,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -14229,7 +14262,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 454241465}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &454241464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14283,6 +14328,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454241461}
   m_CullTransparentMesh: 1
+--- !u!114 &454241467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454241461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorHover: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorPresionado: {r: 1, g: 0, b: 0, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
 --- !u!1 &456119966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1261024256364454225, guid: 3bd606320060a984e99c640a98d12f2a, type: 3}
@@ -14569,7 +14633,7 @@ RectTransform:
   - {fileID: 1297703024}
   - {fileID: 626048976}
   - {fileID: 1570867834}
-  m_Father: {fileID: 1203643008}
+  m_Father: {fileID: 2100662207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -26301,6 +26365,7 @@ GameObject:
   - component: {fileID: 626048979}
   - component: {fileID: 626048978}
   - component: {fileID: 626048977}
+  - component: {fileID: 626048981}
   m_Layer: 0
   m_Name: VolverBoton
   m_TagString: Untagged
@@ -26357,10 +26422,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -26371,7 +26436,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 626048979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &626048978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26425,6 +26502,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626048975}
   m_CullTransparentMesh: 1
+--- !u!114 &626048981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626048975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorHover: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorPresionado: {r: 1, g: 0, b: 0, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
 --- !u!1001 &632479583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45415,7 +45511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1203643008
 Transform:
   m_ObjectHideFlags: 0
@@ -45433,12 +45529,7 @@ Transform:
   - {fileID: 1400038535}
   - {fileID: 2049481258}
   - {fileID: 873813051}
-  - {fileID: 1217060736}
-  - {fileID: 477813248}
-  - {fileID: 1805679562}
-  - {fileID: 334871955}
-  - {fileID: 1589429210}
-  - {fileID: 1684533666}
+  - {fileID: 2100662207}
   m_Father: {fileID: 1002488739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1205639258
@@ -45792,7 +45883,7 @@ RectTransform:
   - {fileID: 1706249661}
   - {fileID: 1933310087}
   - {fileID: 302510720}
-  m_Father: {fileID: 1203643008}
+  m_Father: {fileID: 2100662207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -48602,7 +48693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1306209880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50361,7 +50452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1355545872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51687,6 +51778,7 @@ GameObject:
   - component: {fileID: 1398622235}
   - component: {fileID: 1398622234}
   - component: {fileID: 1398622233}
+  - component: {fileID: 1398622237}
   m_Layer: 0
   m_Name: VolverBoton
   m_TagString: Untagged
@@ -51743,10 +51835,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -51757,7 +51849,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1398622235}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1398622234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51811,6 +51915,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398622231}
   m_CullTransparentMesh: 1
+--- !u!114 &1398622237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398622231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorHover: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorPresionado: {r: 1, g: 0, b: 0, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
 --- !u!1 &1400038534
 GameObject:
   m_ObjectHideFlags: 0
@@ -53612,6 +53735,7 @@ GameObject:
   - component: {fileID: 1477706874}
   - component: {fileID: 1477706873}
   - component: {fileID: 1477706872}
+  - component: {fileID: 1477706876}
   m_Layer: 0
   m_Name: VolverBoton
   m_TagString: Untagged
@@ -53668,10 +53792,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -53682,7 +53806,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1477706874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1477706873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53736,6 +53872,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477706870}
   m_CullTransparentMesh: 1
+--- !u!114 &1477706876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477706870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorHover: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorPresionado: {r: 1, g: 0, b: 0, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
 --- !u!1 &1488794366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1261024256364454225, guid: 3bd606320060a984e99c640a98d12f2a, type: 3}
@@ -55192,6 +55347,7 @@ GameObject:
   - component: {fileID: 1531767088}
   - component: {fileID: 1531767087}
   - component: {fileID: 1531767086}
+  - component: {fileID: 1531767090}
   m_Layer: 0
   m_Name: VolverBoton
   m_TagString: Untagged
@@ -55248,10 +55404,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -55262,7 +55418,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1531767088}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1531767087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55316,6 +55484,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531767084}
   m_CullTransparentMesh: 1
+--- !u!114 &1531767090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531767084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorHover: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorPresionado: {r: 1, g: 0, b: 0, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
 --- !u!1001 &1535393827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57160,7 +57347,7 @@ RectTransform:
   - {fileID: 892431319}
   - {fileID: 1398622232}
   - {fileID: 1105547378}
-  m_Father: {fileID: 1203643008}
+  m_Father: {fileID: 2100662207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -59395,7 +59582,7 @@ RectTransform:
   - {fileID: 225756253}
   - {fileID: 1477706871}
   - {fileID: 416163486}
-  m_Father: {fileID: 1203643008}
+  m_Father: {fileID: 2100662207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -62800,7 +62987,7 @@ RectTransform:
   - {fileID: 1601110928}
   - {fileID: 1531767085}
   - {fileID: 1694105652}
-  m_Father: {fileID: 1203643008}
+  m_Father: {fileID: 2100662207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -67301,6 +67488,7 @@ GameObject:
   - component: {fileID: 1933310090}
   - component: {fileID: 1933310089}
   - component: {fileID: 1933310088}
+  - component: {fileID: 1933310092}
   m_Layer: 0
   m_Name: VolverBoton
   m_TagString: Untagged
@@ -67357,10 +67545,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -67371,7 +67559,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1933310090}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1933310089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67425,6 +67625,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933310086}
   m_CullTransparentMesh: 1
+--- !u!114 &1933310092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933310086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorHover: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorPresionado: {r: 1, g: 0, b: 0, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
 --- !u!1 &1934143297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1261024256364454225, guid: 3bd606320060a984e99c640a98d12f2a, type: 3}
@@ -72103,7 +72322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2049481258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -73823,6 +74042,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8930647404748767545, guid: 93ba9e77507596c4eb19a59ea4add5a9, type: 3}
   m_PrefabInstance: {fileID: 2099984292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2100662206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100662207}
+  m_Layer: 0
+  m_Name: DiarioMuisca
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2100662207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100662206}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1217060736}
+  - {fileID: 477813248}
+  - {fileID: 1805679562}
+  - {fileID: 334871955}
+  - {fileID: 1589429210}
+  - {fileID: 1684533666}
+  m_Father: {fileID: 1203643008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2103438957
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -75237,13 +75493,16 @@ GameObject:
   - component: {fileID: 6577541978953725983}
   - component: {fileID: 5745061726543039031}
   - component: {fileID: 6672988655425104441}
+  - component: {fileID: 6672988655425104443}
+  - component: {fileID: 6672988655425104442}
+  - component: {fileID: 6672988655425104444}
   m_Layer: 0
   m_Name: Esclava BAIA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2741535442073507363
 GameObject:
   m_ObjectHideFlags: 0
@@ -75256,13 +75515,16 @@ GameObject:
   - component: {fileID: 6577541978533736566}
   - component: {fileID: 5745061726088512094}
   - component: {fileID: 6672988655070192208}
+  - component: {fileID: 6672988655070192210}
+  - component: {fileID: 6672988655070192209}
+  - component: {fileID: 6672988655070192211}
   m_Layer: 0
   m_Name: Agricultora CHIBCHAZHUM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2741535442428340151
 GameObject:
   m_ObjectHideFlags: 0
@@ -75275,13 +75537,16 @@ GameObject:
   - component: {fileID: 6577541979499119074}
   - component: {fileID: 5745061727071384522}
   - component: {fileID: 6672988654896501700}
+  - component: {fileID: 6672988654896501702}
+  - component: {fileID: 6672988654896501701}
+  - component: {fileID: 6672988654896501703}
   m_Layer: 0
   m_Name: Sacerdote CHYKY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2741535442622507387
 GameObject:
   m_ObjectHideFlags: 0
@@ -75294,13 +75559,16 @@ GameObject:
   - component: {fileID: 6577541979024789294}
   - component: {fileID: 5745061726613011718}
   - component: {fileID: 6672988654420139272}
+  - component: {fileID: 6672988654420139274}
+  - component: {fileID: 6672988654420139273}
+  - component: {fileID: 6672988654420139275}
   m_Layer: 0
   m_Name: Guerrero NYKY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2741535442819656141
 GameObject:
   m_ObjectHideFlags: 0
@@ -75313,13 +75581,16 @@ GameObject:
   - component: {fileID: 6577541979884670872}
   - component: {fileID: 5745061727489572272}
   - component: {fileID: 6672988656353697214}
+  - component: {fileID: 6672988656353697216}
+  - component: {fileID: 6672988656353697215}
+  - component: {fileID: 6672988656353697217}
   m_Layer: 0
   m_Name: Artista CHISAKUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2741535442955690518
 GameObject:
   m_ObjectHideFlags: 0
@@ -75332,13 +75603,16 @@ GameObject:
   - component: {fileID: 6577541980028535875}
   - component: {fileID: 5745061727617807979}
   - component: {fileID: 6672988656497628773}
+  - component: {fileID: 6672988656497628775}
+  - component: {fileID: 6672988656497628774}
+  - component: {fileID: 6672988656497628776}
   m_Layer: 0
   m_Name: Cacique HUE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2892495270927683024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75930,6 +76204,95 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6672988654420139273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442622507387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 0.54901963, g: 0.28627452, b: 0.043137256, a: 1}
+  colorHover: {r: 0.9622642, g: 0.85186744, b: 0.72169816, a: 1}
+  colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
+--- !u!114 &6672988654420139274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442622507387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5745061726613011718}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6672988654420139275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442622507387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082115e8fee440a49ab29684beaa606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonBasicoInventario
+  MenuInventario: {fileID: 2049481257}
+  DiarioPersonajeNPC: {fileID: 477813247}
 --- !u!114 &6672988654896501700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75945,6 +76308,95 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6672988654896501701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442428340151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 0.54901963, g: 0.28627452, b: 0.043137256, a: 1}
+  colorHover: {r: 0.9622642, g: 0.85186744, b: 0.72169816, a: 1}
+  colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
+--- !u!114 &6672988654896501702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442428340151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5745061727071384522}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6672988654896501703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442428340151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082115e8fee440a49ab29684beaa606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonBasicoInventario
+  MenuInventario: {fileID: 2049481257}
+  DiarioPersonajeNPC: {fileID: 334871954}
 --- !u!114 &6672988655070192208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75960,6 +76412,95 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6672988655070192209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442073507363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 0.54901963, g: 0.28627452, b: 0.043137256, a: 1}
+  colorHover: {r: 0.9622642, g: 0.85186744, b: 0.72169816, a: 1}
+  colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
+--- !u!114 &6672988655070192210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442073507363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5745061726088512094}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6672988655070192211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442073507363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082115e8fee440a49ab29684beaa606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonBasicoInventario
+  MenuInventario: {fileID: 2049481257}
+  DiarioPersonajeNPC: {fileID: 1684533665}
 --- !u!114 &6672988655425104441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75975,6 +76516,95 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6672988655425104442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535441883225674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 0.54901963, g: 0.28627452, b: 0.043137256, a: 1}
+  colorHover: {r: 0.9622642, g: 0.85186744, b: 0.72169816, a: 1}
+  colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
+--- !u!114 &6672988655425104443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535441883225674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5745061726543039031}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6672988655425104444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535441883225674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082115e8fee440a49ab29684beaa606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonBasicoInventario
+  MenuInventario: {fileID: 2049481257}
+  DiarioPersonajeNPC: {fileID: 1589429209}
 --- !u!114 &6672988656353697214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75990,6 +76620,95 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6672988656353697215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442819656141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 0.54901963, g: 0.28627452, b: 0.043137256, a: 1}
+  colorHover: {r: 0.9622642, g: 0.85186744, b: 0.72169816, a: 1}
+  colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
+--- !u!114 &6672988656353697216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442819656141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5745061727489572272}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6672988656353697217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442819656141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082115e8fee440a49ab29684beaa606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonBasicoInventario
+  MenuInventario: {fileID: 2049481257}
+  DiarioPersonajeNPC: {fileID: 1805679561}
 --- !u!114 &6672988656497628773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76005,6 +76724,95 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6672988656497628774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442955690518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94413ddffcba4e9f766de0e8e0b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonInteractivo
+  texto: {fileID: 0}
+  colorNormal: {r: 0.54901963, g: 0.28627452, b: 0.043137256, a: 1}
+  colorHover: {r: 0.9622642, g: 0.85186744, b: 0.72169816, a: 1}
+  colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
+  escalaHover: 1.1
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
+  usarSonidoGlobal: 1
+--- !u!114 &6672988656497628775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442955690518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 622178186, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_PressedSprite: {fileID: 1480956842, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 826466427, guid: a602180cc7c8f4a4292fd6c1130486a0, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5745061727617807979}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6672988655070192211}
+        m_TargetAssemblyTypeName: BotonBasicoInventario, Assembly-CSharp
+        m_MethodName: AbrirDiarioPersonajeNPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6672988656497628776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741535442955690518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082115e8fee440a49ab29684beaa606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotonBasicoInventario
+  MenuInventario: {fileID: 2049481257}
+  DiarioPersonajeNPC: {fileID: 1217060735}
 --- !u!1001 &7476577950729244995
 PrefabInstance:
   m_ObjectHideFlags: 0
