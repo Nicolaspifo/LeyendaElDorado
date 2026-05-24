@@ -11839,6 +11839,16 @@ MonoBehaviour:
   npcName: Agricultora CHIBCHAZHUM
   dialogos:
   - Sin comida no hay ritual, sin tierra no hay pueblo.
+  - La tierra tiene sus propios tiempos. Quien intenta apresurarla termina cosechando
+    hambre.
+  - "Cada semilla que sembramos tambi\xE9n forma parte del ritual. Alimentar al pueblo
+    es honrar a los dioses."
+  - "Aprend\xED a sembrar observando las manos de mi madre antes incluso de aprender
+    a hablar."
+  - "Las cosechas malas ense\xF1an m\xE1s que las abundantes. Nos recuerdan que dependemos
+    de la tierra."
+  - "El ritual comienza mucho antes de llegar al lago. Comienza aqu\xED, donde nace
+    el alimento del pueblo."
   DialogoSonido: {fileID: 8300000, guid: 317e8ddd34badbf4f99ec3a62bf110f5, type: 3}
   usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
@@ -17462,6 +17472,14 @@ MonoBehaviour:
   dialogos:
   - "El oro no brilla por su forma, sino por lo que representa. Aqu\xED no se adora
     al metal, se honra a los dioses."
+  - "El oro refleja la luz del sol. Por eso lo usamos en los rituales. No representa
+    poder, representa conexi\xF3n."
+  - "Los dioses no piden tesoros. Piden equilibrio. El pueblo olvida eso cuando aparece
+    la ambici\xF3n."
+  - Muchos creen que el sacerdote sirve a los dioses. La verdad es que servimos al
+    equilibrio entre el pueblo y ellos.
+  - "He visto hombres arrodillarse frente al oro\u2026 sin comprender que solo es
+    un s\xEDmbolo de algo mucho m\xE1s grande."
   DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
   usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
@@ -30270,6 +30288,16 @@ MonoBehaviour:
   dialogos:
   - "Este lago ha visto m\xE1s personas de las que te imaginas. Aqu\xED no se entra
     por curiosidad."
+  - "Cuando era ni\xF1o me ense\xF1aron a caminar alrededor del lago sin hacer ruido.
+    Dec\xEDan que el agua duerme, pero escucha."
+  - "He visto hombres llegar buscando oro. Ninguno entendi\xF3 por qu\xE9 el lago
+    sigue intacto."
+  - "Las monta\xF1as protegen este lugar. No porque escondan riqueza\u2026 sino porque
+    esconden memoria."
+  - "Mi padre vigil\xF3 este lago antes que yo\u2026 y antes que \xE9l, tambi\xE9n
+    lo hizo mi abuelo."
+  - "Perd\xED a mis hermanos intentando proteger este lugar de hombres que confund\xEDan
+    lo sagrado con riqueza."
   DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
   usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
@@ -37074,6 +37102,13 @@ MonoBehaviour:
   dialogos:
   - "Dicen que estoy loco porque dibujo lo que no se ve. Pero los s\xEDmbolos siempre
     hablan."
+  - "Los s\xEDmbolos cambian con el tiempo, pero las historias permanecen. Por eso
+    seguimos pintando."
+  - "Los ni\xF1os aprenden mirando los muros antes incluso de aprender las palabras."
+  - "Cuando era ni\xF1o dibujaba figuras en la tierra y los mayores dec\xEDan que
+    hablaba con esp\xEDritus invisibles."
+  - "Cada s\xEDmbolo que pinto guarda recuerdos de quienes vivieron antes que nosotros."
+  - "A veces siento que las pinturas sobreviven m\xE1s tiempo que las propias personas."
   DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
   usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
@@ -54768,6 +54803,14 @@ MonoBehaviour:
   npcName: Esclava BAIA
   dialogos:
   - El Dorado no me pertenece, pero mi esfuerzo sostiene lo que otros celebran.
+  - "A veces los que menos hablamos son quienes m\xE1s secretos conocen."
+  - "He escuchado historias de hombres que morir\xEDan por encontrar El Dorado\u2026
+    sin entender jam\xE1s lo que significa."
+  - Muchos miran el oro. Pero nadie mira las manos cansadas que preparan la ceremonia.
+  - "He pasado a\xF1os cargando objetos para ceremonias que nunca podr\xE9 celebrar."
+  - "La gente habla libremente cuando cree que nadie importante est\xE1 escuchando."
+  - Aunque este lugar no me pertenece, conozco secretos que ni los hombres poderosos
+    logran ver.
   DialogoSonido: {fileID: 8300000, guid: 317e8ddd34badbf4f99ec3a62bf110f5, type: 3}
   usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
@@ -61999,8 +62042,21 @@ MonoBehaviour:
   - "Hola viajero sabemos que vienes desde muy lejos. Supongo que traes preguntas.
     El Dorado no es un lugar, es un momento. Un pacto entre nuestro pueblo y los
     esp\xEDritus del agua."
+  - "Muchos extranjeros creen que gobernar es mandar. Aqu\xED gobernar significa
+    escuchar primero a la tierra y luego al pueblo."
+  - "El agua recuerda todo. Por eso nuestros rituales ocurren frente a la laguna.
+    All\xED los esp\xEDritus observan nuestras decisiones."
+  - "Cada generaci\xF3n entrega algo al lago. No para perderlo, sino para demostrar
+    que nada nos pertenece realmente."
+  - "Desde ni\xF1o me ense\xF1aron que un cacique no pertenece a s\xED mismo. Cada
+    decisi\xF3n que tom\xF3 afecta al pueblo, al agua y a las monta\xF1as que nos
+    rodean."
+  - "Mi padre dec\xEDa que el equilibrio puede romperse incluso con una sola decisi\xF3n
+    tomada desde el orgullo."
+  - "Ser heredero no significa recibir poder. Significa aceptar el peso de proteger
+    algo m\xE1s grande que uno mismo."
   - "Ahora puedes continuar tu camino e ir averiguando y conociendo m\xE1s sobre
-    la ciudad y el ritual, suerte viajero."
+    la ciudad y el ritual, suerte viajero"
   DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
   usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
