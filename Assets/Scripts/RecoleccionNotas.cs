@@ -31,7 +31,9 @@ public class RecoleccionNotas : MonoBehaviour
         Ray ray = new Ray(player.position, player.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, RangoDeInteraccion))
+        float radio = 1f;
+
+        if (Physics.SphereCast(ray, radio, out hit, RangoDeInteraccion))
         {
             if (hit.collider.gameObject == gameObject)
             {

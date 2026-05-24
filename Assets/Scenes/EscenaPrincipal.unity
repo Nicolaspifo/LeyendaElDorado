@@ -2222,7 +2222,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.83
+  m_Radius: 7
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &79186849
 Animator:
@@ -28489,7 +28489,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.83
+  m_Radius: 7
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!1 &655773426 stripped
 GameObject:
@@ -38774,7 +38774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.93
+      value: -17.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38782,7 +38782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.82
+      value: -6.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39025,7 +39025,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.83
+  m_Radius: 7
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1011057321
 Animator:
@@ -47298,7 +47298,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.83
+  m_Radius: 7
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1213024145
 Animator:
@@ -49418,7 +49418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.28
+      value: 40.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.y
@@ -49426,7 +49426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 47.13
+      value: 32.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalRotation.w
@@ -49669,7 +49669,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.83
+  m_Radius: 7
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1269962796
 Animator:
@@ -56033,15 +56033,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -72.6
+      value: -75.69
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.129
+      value: 6.68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 116.1
+      value: 79.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56284,7 +56284,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.83
+  m_Radius: 7
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1499237647
 Animator:
@@ -57028,7 +57028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1523037765
 RectTransform:
   m_ObjectHideFlags: 0
