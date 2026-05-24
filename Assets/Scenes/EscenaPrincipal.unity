@@ -2202,7 +2202,7 @@ MonoBehaviour:
   player: {fileID: 1895723790}
   contador: {fileID: 916514749}
   sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
-  usarSonidoGlobal: 1
+  usarSonidoGlobal: 0
 --- !u!135 &79186848
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7705,7 +7705,7 @@ MonoBehaviour:
   colorHover: {r: 1, g: 0.7710955, b: 0.5707547, a: 1}
   colorPresionado: {r: 0.8196079, g: 0.5568628, b: 0.24705884, a: 1}
   escalaHover: 1.1
-  sonidoBoton: {fileID: 0}
+  sonidoBoton: {fileID: 8300000, guid: 14dd1e40543a0b945960fe399a76abfd, type: 3}
   usarSonidoGlobal: 1
 --- !u!1 &261351840
 GameObject:
@@ -10358,7 +10358,7 @@ MonoBehaviour:
   player: {fileID: 1895723790}
   contador: {fileID: 916514749}
   sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
-  usarSonidoGlobal: 1
+  usarSonidoGlobal: 0
 --- !u!1001 &325876924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11839,6 +11839,8 @@ MonoBehaviour:
   npcName: Agricultora CHIBCHAZHUM
   dialogos:
   - Sin comida no hay ritual, sin tierra no hay pueblo.
+  DialogoSonido: {fileID: 8300000, guid: 317e8ddd34badbf4f99ec3a62bf110f5, type: 3}
+  usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
   yainteractuado: 0
 --- !u!114 &382128799
@@ -17245,6 +17247,8 @@ MonoBehaviour:
   dialogos:
   - "El oro no brilla por su forma, sino por lo que representa. Aqu\xED no se adora
     al metal, se honra a los dioses."
+  DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
+  usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
   yainteractuado: 0
 --- !u!114 &560951324
@@ -29832,10 +29836,10 @@ RectTransform:
   - {fileID: 1429910801}
   m_Father: {fileID: 205059152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707628794
 MonoBehaviour:
@@ -30051,6 +30055,8 @@ MonoBehaviour:
   dialogos:
   - "Este lago ha visto m\xE1s personas de las que te imaginas. Aqu\xED no se entra
     por curiosidad."
+  DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
+  usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
   yainteractuado: 0
 --- !u!114 &710974891
@@ -36851,6 +36857,8 @@ MonoBehaviour:
   dialogos:
   - "Dicen que estoy loco porque dibujo lo que no se ve. Pero los s\xEDmbolos siempre
     hablan."
+  DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
+  usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
   yainteractuado: 0
 --- !u!114 &934046245
@@ -38780,7 +38788,7 @@ MonoBehaviour:
   player: {fileID: 1895723790}
   contador: {fileID: 916514749}
   sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
-  usarSonidoGlobal: 1
+  usarSonidoGlobal: 0
 --- !u!135 &1011057320
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -46395,7 +46403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1203643008
 Transform:
   m_ObjectHideFlags: 0
@@ -46914,7 +46922,7 @@ MonoBehaviour:
   player: {fileID: 1895723790}
   contador: {fileID: 916514749}
   sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
-  usarSonidoGlobal: 1
+  usarSonidoGlobal: 0
 --- !u!135 &1213024144
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -49285,7 +49293,7 @@ MonoBehaviour:
   player: {fileID: 1895723790}
   contador: {fileID: 916514749}
   sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
-  usarSonidoGlobal: 1
+  usarSonidoGlobal: 0
 --- !u!135 &1269962795
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -54403,6 +54411,8 @@ MonoBehaviour:
   npcName: Esclava BAIA
   dialogos:
   - El Dorado no me pertenece, pero mi esfuerzo sostiene lo que otros celebran.
+  DialogoSonido: {fileID: 8300000, guid: 317e8ddd34badbf4f99ec3a62bf110f5, type: 3}
+  usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
   yainteractuado: 0
 --- !u!114 &1421605766
@@ -55898,7 +55908,7 @@ MonoBehaviour:
   player: {fileID: 1895723790}
   contador: {fileID: 916514749}
   sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
-  usarSonidoGlobal: 1
+  usarSonidoGlobal: 0
 --- !u!135 &1499237646
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -61558,6 +61568,8 @@ MonoBehaviour:
     esp\xEDritus del agua."
   - "Ahora puedes continuar tu camino e ir averiguando y conociendo m\xE1s sobre
     la ciudad y el ritual, suerte viajero."
+  DialogoSonido: {fileID: 8300000, guid: 27ac8d4a965775746b96615619e05220, type: 3}
+  usarSonidoGlobal: 0
   interactionUI: {fileID: 0}
   yainteractuado: 0
 --- !u!114 &1687230731
@@ -77363,7 +77375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2741535442073507363
 GameObject:
   m_ObjectHideFlags: 0
@@ -77385,7 +77397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2741535442428340151
 GameObject:
   m_ObjectHideFlags: 0
@@ -77407,7 +77419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2741535442622507387
 GameObject:
   m_ObjectHideFlags: 0
@@ -77429,7 +77441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2741535442819656141
 GameObject:
   m_ObjectHideFlags: 0
@@ -77451,7 +77463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2741535442955690518
 GameObject:
   m_ObjectHideFlags: 0
@@ -77473,7 +77485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2892495270927683024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77489,10 +77501,10 @@ RectTransform:
   - {fileID: 2064841989712877879}
   m_Father: {fileID: 1455136155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 505.9502, y: -150}
+  m_SizeDelta: {x: 162.4, y: 208.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2892495271072663051
 RectTransform:
@@ -77509,10 +77521,10 @@ RectTransform:
   - {fileID: 2064841989857825516}
   m_Father: {fileID: 1455136155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 129.75023, y: -150}
+  m_SizeDelta: {x: 162.4, y: 208.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2892495271275826534
 RectTransform:
@@ -77529,10 +77541,10 @@ RectTransform:
   - {fileID: 2064841991671601537}
   m_Father: {fileID: 1455136155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 317.85022, y: -150}
+  m_SizeDelta: {x: 162.4, y: 208.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2892495271619019690
 RectTransform:
@@ -77549,10 +77561,10 @@ RectTransform:
   - {fileID: 2064841991477827405}
   m_Father: {fileID: 1455136155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 694.05023, y: -150}
+  m_SizeDelta: {x: 162.4, y: 208.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2892495271724560958
 RectTransform:
@@ -77569,10 +77581,10 @@ RectTransform:
   - {fileID: 2064841991046457049}
   m_Father: {fileID: 1455136155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1070.2502, y: -150}
+  m_SizeDelta: {x: 162.4, y: 208.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2892495272147630679
 RectTransform:
@@ -77589,10 +77601,10 @@ RectTransform:
   - {fileID: 2064841990932721328}
   m_Father: {fileID: 1455136155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 882.1502, y: -150}
+  m_SizeDelta: {x: 162.4, y: 208.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4651093866192500270
 MonoBehaviour:

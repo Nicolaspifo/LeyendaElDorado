@@ -141,6 +141,8 @@ public class InteraccionNPC : MonoBehaviour
         nameText.text = npc.npcName;
 
         ShowCurrentDialog();
+        currentNPC.ReproducirSonidoDialogo();
+
     }
 
     void NextDialog()
