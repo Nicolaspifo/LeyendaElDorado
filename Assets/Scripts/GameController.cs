@@ -1,5 +1,8 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +13,7 @@ public class GameController : MonoBehaviour
     private float accumulatedFrames = 0f;
     private float accumulatedTime = 0f;
     private float timeLeft;
+
     void Start()
     {
         timeLeft = updateInterval;
