@@ -23,6 +23,14 @@ public class InteraccionNPC : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 
+    public NavegacionInventario navegacionInventario;
+
+    void Start()
+    {
+        if (navegacionInventario == null)
+            navegacionInventario = FindFirstObjectByType<NavegacionInventario>();
+    }
+
     private void OnEnable()
     {
         Interactuar.action.Enable();
@@ -113,6 +121,14 @@ public class InteraccionNPC : MonoBehaviour
         {
             StartDialog(npc);
         }
+
+        
+        if (npc != null && npc.yainteractuado == false)
+        {
+            npc.yainteractuado = true;
+            if (navegacionInventario != null)
+                navegacionInventario.crearPersonajeUI(npc.npcName);
+        }
     }
 
     void StartDialog(NPC npc)
@@ -125,6 +141,8 @@ public class InteraccionNPC : MonoBehaviour
         nameText.text = npc.npcName;
 
         ShowCurrentDialog();
+        currentNPC.ReproducirSonidoDialogo();
+
     }
 
     void NextDialog()

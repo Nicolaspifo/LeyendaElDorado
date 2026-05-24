@@ -3,12 +3,17 @@ using UnityEngine.InputSystem;
 
 public class RecoleccionNotas : MonoBehaviour
 {
-    public int ContadorNotas = 0;
     public InputActionReference Interactuar;
 
     public float RangoDeInteraccion = 2f;
 
     public Transform player; // Referencia al player
+
+    public ContadorNotasObjetos contador;
+
+    [Header("Audio")]
+    public AudioClip sonidoBoton;
+    public bool usarSonidoGlobal = true;
 
     void Update()
     {
@@ -30,10 +35,24 @@ public class RecoleccionNotas : MonoBehaviour
         {
             if (hit.collider.gameObject == gameObject)
             {
-                ContadorNotas++;
-                Debug.Log("Nota recogida. Total: " + ContadorNotas);
+                contador.AgregarNota();
+
+                ReproducirSonido();
+                
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void ReproducirSonido()
+    {
+        if (usarSonidoGlobal && SimpleAudioSystem.Instance != null)
+        {
+            SimpleAudioSystem.Instance.PlayButtonSound();
+        }
+        else if (sonidoBoton != null && SimpleAudioSystem.Instance != null)
+        {
+            SimpleAudioSystem.Instance.sfxSource.PlayOneShot(sonidoBoton);
         }
     }
 }
