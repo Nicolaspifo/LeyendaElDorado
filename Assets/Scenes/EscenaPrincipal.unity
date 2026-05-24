@@ -38731,6 +38731,7 @@ MonoBehaviour:
   isInvetoryActive: 0
   menuInventarioUI: {fileID: 1203643007}
   inventarioButton: {fileID: 4155517090278397567, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  cancelarButton: {fileID: 7727032971491509709, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!4 &1002488739
 Transform:
   m_ObjectHideFlags: 0

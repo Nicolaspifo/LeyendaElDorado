@@ -6,6 +6,7 @@ public class MenuInventario : MonoBehaviour
     public bool isInvetoryActive = false;
     public GameObject menuInventarioUI;
     public InputActionReference inventarioButton;
+    public InputActionReference cancelarButton;
     void Start()
     {
         menuInventarioUI.SetActive(false); // Asegúrate de que el menú de pausa esté desactivado al inicio
@@ -29,7 +30,7 @@ public class MenuInventario : MonoBehaviour
 
         if (inventarioButton.action.triggered )
         {
-            if (isInvetoryActive)
+            if (cancelarButton.action.triggered || inventarioButton.action.triggered && isInvetoryActive)
             {
                 ResumeGame();
             }
@@ -38,6 +39,11 @@ public class MenuInventario : MonoBehaviour
                 AbrirInventario();
             }
         }
+        if (cancelarButton.action.triggered && isInvetoryActive)
+        {
+            ResumeGame();
+        }
+
     }
 
     void AbrirInventario()
