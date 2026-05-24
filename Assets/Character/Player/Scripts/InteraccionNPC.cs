@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InteraccionNPC : MonoBehaviour
 {
     public float interactionRange = 2f;
-    public InputActionReference Interactuar;
+    public InputActionReference InteractuarDialogo;
     public InputActionReference Cancelar;
 
     public GameObject dialogCanvas;
@@ -33,20 +33,20 @@ public class InteraccionNPC : MonoBehaviour
 
     private void OnEnable()
     {
-        Interactuar.action.Enable();
+        InteractuarDialogo.action.Enable();
         Cancelar.action.Enable();
     }
 
     private void OnDisable()
     {
-        Interactuar.action.Disable();
+        InteractuarDialogo.action.Disable();
         Cancelar.action.Disable();
     }
 
 
     void Update()
     {
-        if (Interactuar.action.WasPressedThisFrame())
+        if (InteractuarDialogo.action.WasPressedThisFrame())
         {
             if (isTalking)
             {

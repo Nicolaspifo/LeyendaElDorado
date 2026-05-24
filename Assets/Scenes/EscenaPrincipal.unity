@@ -68918,7 +68918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteraccionNPC
   interactionRange: 2
-  Interactuar: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  InteractuarDialogo: {fileID: -1749888666032005802, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Cancelar: {fileID: 7727032971491509709, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   dialogCanvas: {fileID: 385776923}
   nameText: {fileID: 1251955792}
