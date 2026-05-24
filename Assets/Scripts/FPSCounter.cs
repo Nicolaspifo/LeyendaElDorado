@@ -1,10 +1,8 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 
-public class GameController : MonoBehaviour
+public class FPSCounter : MonoBehaviour
 {
-    private int LimiteFPS = 60;
-   
     public TextMeshProUGUI fpsText;
     public float updateInterval = 0.5f;
     private float accumulatedFrames = 0f;
@@ -13,15 +11,13 @@ public class GameController : MonoBehaviour
     void Start()
     {
         timeLeft = updateInterval;
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = LimiteFPS;
     }
     void Update()
     {
         timeLeft -= Time.deltaTime;
         accumulatedTime += Time.timeScale / Time.deltaTime;
         accumulatedFrames++;
-        if (timeLeft <= 0.0f)
+        if (timeLeft <= 0.0f )
         {
             float fps = accumulatedTime / accumulatedFrames;
             if (fpsText != null)
@@ -34,5 +30,4 @@ public class GameController : MonoBehaviour
             accumulatedFrames = 0f;
         }
     }
-
 }
