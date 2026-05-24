@@ -11,6 +11,10 @@ public class RecoleccionNotas : MonoBehaviour
 
     public ContadorNotasObjetos contador;
 
+    [Header("Audio")]
+    public AudioClip sonidoBoton;
+    public bool usarSonidoGlobal = true;
+
     void Update()
     {
         if (Interactuar == null || Interactuar.action == null)
@@ -32,9 +36,23 @@ public class RecoleccionNotas : MonoBehaviour
             if (hit.collider.gameObject == gameObject)
             {
                 contador.AgregarNota();
+
+                ReproducirSonido();
                 
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void ReproducirSonido()
+    {
+        if (usarSonidoGlobal && SimpleAudioSystem.Instance != null)
+        {
+            SimpleAudioSystem.Instance.PlayButtonSound();
+        }
+        else if (sonidoBoton != null && SimpleAudioSystem.Instance != null)
+        {
+            SimpleAudioSystem.Instance.sfxSource.PlayOneShot(sonidoBoton);
         }
     }
 }

@@ -289,7 +289,7 @@ public class MenuPrincipal : MonoBehaviour
                 yield return new WaitForSeconds(SimpleAudioSystem.Instance.fadeTime);
         }
 
-        SceneManager.LoadScene("ejemplo");
+        SceneManager.LoadScene("EscenaPrincipal");
     }
     // Métodos de navegación
     // Ahora muestra la introducción en lugar de ir directamente al juego

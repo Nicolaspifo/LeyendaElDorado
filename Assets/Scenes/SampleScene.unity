@@ -5499,7 +5499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NavegacionInventario
   PersonajesCanvas: {fileID: 533740798}
-  PersonajePrefabCanvas: {fileID: 2741535443096547427, guid: 14b4d9fd8ba2e0146bceda4b2e17b38a, type: 3}
 --- !u!1 &1096759322
 GameObject:
   m_ObjectHideFlags: 0
