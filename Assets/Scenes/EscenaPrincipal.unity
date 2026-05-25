@@ -2222,7 +2222,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 2.1
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &79186849
 Animator:
@@ -8105,6 +8105,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268150317}
   m_CullTransparentMesh: 1
+--- !u!114 &268501081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881204260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe4983aac36e604ca8d717b5c518c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RecoleccionNotas
+  Interactuar: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  RangoDeInteraccion: 2
+  player: {fileID: 1895723790}
+  contador: {fileID: 916514749}
+  sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
+  usarSonidoGlobal: 0
 --- !u!1 &269188710
 GameObject:
   m_ObjectHideFlags: 0
@@ -10341,24 +10359,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8930647404748767545, guid: 93ba9e77507596c4eb19a59ea4add5a9, type: 3}
   m_PrefabInstance: {fileID: 1716568411}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &323516111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881204260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebe4983aac36e604ca8d717b5c518c87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RecoleccionNotas
-  Interactuar: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  RangoDeInteraccion: 2
-  player: {fileID: 1895723790}
-  contador: {fileID: 916514749}
-  sonidoBoton: {fileID: 8300000, guid: 88576032776722c4784fa4678523296d, type: 3}
-  usarSonidoGlobal: 0
 --- !u!1001 &325876924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28507,7 +28507,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 2.1
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!1 &655773426 stripped
 GameObject:
@@ -39061,7 +39061,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 2.1
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1011057321
 Animator:
@@ -47334,7 +47334,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 2.1
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1213024145
 Animator:
@@ -49705,7 +49705,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 2.1
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1269962796
 Animator:
@@ -56328,7 +56328,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 2.1
   m_Center: {x: -10.93, y: 28.54, z: -0.18}
 --- !u!95 &1499237647
 Animator:
@@ -68032,7 +68032,7 @@ PrefabInstance:
       addedObject: {fileID: 653909831}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 323516111}
+      addedObject: {fileID: 268501081}
     - targetCorrespondingSourceObject: {fileID: -1948202708219610280, guid: 777ed3247925d7d409ad8985ff39f822, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1881204270}

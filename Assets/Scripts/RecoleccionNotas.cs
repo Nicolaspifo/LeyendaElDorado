@@ -28,19 +28,23 @@ public class RecoleccionNotas : MonoBehaviour
 
     private void TryInteract()
     {
-        Ray ray = new Ray(player.position, player.forward);
-        RaycastHit hit;
-
         float radio = 1f;
 
-        if (Physics.SphereCast(ray, radio, out hit, RangoDeInteraccion))
+        // Empezar un poco detrás del jugador
+        Vector3 origen = player.position - player.forward * radio * 1f;
+
+        Ray ray = new Ray(origen, player.forward);
+
+        RaycastHit hit;
+
+        if (Physics.SphereCast(ray, radio, out hit, RangoDeInteraccion + radio))
         {
             if (hit.collider.gameObject == gameObject)
             {
                 contador.AgregarNota();
 
                 ReproducirSonido();
-                
+
                 Destroy(gameObject);
             }
         }
