@@ -12,6 +12,9 @@ public class ContadorNotasObjetos : MonoBehaviour
     public TMP_Text contadorNotasText;
     public GameObject UITextoNotificacionNotas;
 
+    [Header("Escena Final")]
+    public GameObject UIEscenafinal;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,7 +64,7 @@ public class ContadorNotasObjetos : MonoBehaviour
 
         if (ContadorNotas >= 6)
         {
-            StartCoroutine(DesactivarNotificacion(ContadorNotas);
+            StartCoroutine(DesactivarNotificacion(ContadorNotas));
         }
         else
         {
@@ -81,9 +84,8 @@ public class ContadorNotasObjetos : MonoBehaviour
         }
         if (CantidadNotas >= 6)
         {
-            SceneManager.LoadScene("NombreEscenaFinal");
+            UIEscenafinal.SetActive(true);
         }
-
     }
 
 
