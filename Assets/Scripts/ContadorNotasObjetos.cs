@@ -1,6 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ContadorNotasObjetos : MonoBehaviour
 {
@@ -55,13 +56,22 @@ public class ContadorNotasObjetos : MonoBehaviour
             }
 
             // Desactivar después de 5 segundos
-            StartCoroutine(DesactivarNotificacion());
+            StartCoroutine(DesactivarNotificacion(ContadorNotas));
+        }
+
+        if (ContadorNotas >= 6)
+        {
+            StartCoroutine(DesactivarNotificacion(ContadorNotas);
+        }
+        else
+        {
+            StartCoroutine(DesactivarNotificacion(ContadorNotas));
         }
 
         Debug.Log("Nota recogida. Total: " + ContadorNotas);
     }
 
-    IEnumerator DesactivarNotificacion()
+    IEnumerator DesactivarNotificacion(int CantidadNotas)
     {
         yield return new WaitForSeconds(5f);
 
@@ -69,7 +79,14 @@ public class ContadorNotasObjetos : MonoBehaviour
         {
             UITextoNotificacionNotas.SetActive(false);
         }
+        if (CantidadNotas >= 6)
+        {
+            SceneManager.LoadScene("NombreEscenaFinal");
+        }
+
     }
+
+
     public void AgregarObjeto()
     {
         ContadorObjetos ++;
