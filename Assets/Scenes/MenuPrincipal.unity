@@ -3020,7 +3020,7 @@ MonoBehaviour:
     isOverlay: 1
   - zoneName: Sacerdote_01
     clip: {fileID: 8300000, guid: 5255db34d4a9c5d49ab6641c25340301, type: 3}
-    volume: 1
+    volume: 0.8
     isOverlay: 1
   - zoneName: Sacerdote_02
     clip: {fileID: 8300000, guid: 690bfb941039ce24891e868f062919e5, type: 3}
@@ -3828,7 +3828,7 @@ MonoBehaviour:
   velocidadFadeIntro: 0.6
   tiempoMinimoPorImagenIntro: 2
   imagenFondoMenuPrincipal: {fileID: 847502860}
-  colorA: {r: 0.5254902, g: 0.742397, b: 0.8, a: 1}
+  colorA: {r: 0.8, g: 0.71708834, b: 0.5254902, a: 1}
   colorB: {r: 1, g: 1, b: 1, a: 1}
   velocidadColor: 0.25
   imagenFadeNegro: {fileID: 1454182715}

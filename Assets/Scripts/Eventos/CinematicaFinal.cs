@@ -38,17 +38,19 @@ private float tiempoMostradoImagen = 0f;
 
     void OnEnable()
     {
+        // Detener overlays activos de zonas anteriores
         if (SimpleAudioSystem.Instance != null)
-        SimpleAudioSystem.Instance.EnterMusicZone(zonaMusicaFinal);
-        
+        {
+            SimpleAudioSystem.Instance.StopAllOverlays();
+            SimpleAudioSystem.Instance.EnterMusicZone(zonaMusicaFinal);
+        }
+
         imagenActual = 0;
         procesando = false;
 
-        // Ocultar todas las imágenes
         foreach (var img in imagenes)
             if (img != null) SetAlpha(img, 0f);
 
-        // Panel negro completamente transparente al inicio
         if (panelFadeNegro != null)
         {
             SetAlpha(panelFadeNegro, 0f);
@@ -238,12 +240,15 @@ private float tiempoMostradoImagen = 0f;
             yield return null;
         }
 
-        // Detener TODO el audio antes de cambiar escena
         if (SimpleAudioSystem.Instance != null)
         {
             SimpleAudioSystem.Instance.StopAllOverlays();
             SimpleAudioSystem.Instance.StopMusic();
         }
+
+        // Restaurar cursor antes de cambiar escena
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         SceneManager.LoadScene(escenaAlTerminar);
     }

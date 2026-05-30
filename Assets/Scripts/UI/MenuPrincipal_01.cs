@@ -50,23 +50,18 @@ public class MenuPrincipal : MonoBehaviour
     
     private void Start()
     {
+        // Restaurar cursor al entrar al menú
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        // Configurar panel de introducción
         if (panelIntroduccion != null)
-        {
             panelIntroduccion.SetActive(false);
-        }
-        
-        // Configurar imágenes de introducción (todas invisibles al inicio)
-        ConfigurarImagenesIntroduccion();
-        
-        // Asegurarse de que el menú principal esté visible por defecto
-        if (panelMenuPrincipal != null)
-        {
-            panelMenuPrincipal.SetActive(true);
-        }
 
-        // Asegurar que el fade empiece invisible
+        ConfigurarImagenesIntroduccion();
+
+        if (panelMenuPrincipal != null)
+            panelMenuPrincipal.SetActive(true);
+
         if (imagenFadeNegro != null)
         {
             imagenFadeNegro.gameObject.SetActive(false);
@@ -252,7 +247,7 @@ public class MenuPrincipal : MonoBehaviour
             }
             else
             {
-                textoPresionarTecla.text = "Estás listo para comenzar tu aventura?";
+                textoPresionarTecla.text = "¿Estás listo para comenzar tu aventura?";
             }
         }
     }
