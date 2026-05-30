@@ -2,8 +2,10 @@
 
 public class IndicadorNPC : MonoBehaviour
 {
-    public float interactionRange = 2f;
+    public float interactionRange = 3f;
     public GameObject interactionUI;
+
+    [HideInInspector] public bool dialogoActivo = false;
 
     public InteraccionNPC interaccion;
 
@@ -27,38 +29,29 @@ public class IndicadorNPC : MonoBehaviour
         }
             
     }
-
+    
     void DetectPlayerLooking()
     {
         if (interaccion == null) return;
 
         NPC npc = interaccion.GetNPCDetectado();
-
         bool shouldShow = (npc != null && npc.gameObject == gameObject);
+
+        if (dialogoActivo) shouldShow = false;
 
         if (interactionUI != null)
             interactionUI.SetActive(shouldShow);
 
-        // Handle world canvas prefab: instantiate when player looks at this NPC,
-        // destroy when the player looks away.
-        if (shouldShow)
+        if (shouldShow && worldCanvasPrefab != null && spawnedWorldCanvas == null)
         {
-            if (worldCanvasPrefab != null && spawnedWorldCanvas == null)
-            {
-                // Parent to the NPC so it follows its movement. Use localPosition for offset.
-                spawnedWorldCanvas = Instantiate(worldCanvasPrefab, transform);
-                spawnedWorldCanvas.transform.localPosition = canvasOffset;
-                spawnedWorldCanvas.transform.localRotation = Quaternion.identity;
-
-            }
+            spawnedWorldCanvas = Instantiate(worldCanvasPrefab, transform);
+            spawnedWorldCanvas.transform.localPosition = canvasOffset;
+            spawnedWorldCanvas.transform.localRotation = Quaternion.identity;
         }
-        else
+        else if (!shouldShow && spawnedWorldCanvas != null)
         {
-            if (spawnedWorldCanvas != null)
-            {
-                Destroy(spawnedWorldCanvas);
-                spawnedWorldCanvas = null;
-            }
+            Destroy(spawnedWorldCanvas);
+            spawnedWorldCanvas = null;
         }
     }
 

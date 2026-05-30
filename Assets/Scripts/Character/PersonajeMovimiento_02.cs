@@ -29,6 +29,9 @@ public class PersonajeMovimiento_02 : MonoBehaviour
     public InputActionReference saltar;
     public InputActionReference correr;
 
+    [HideInInspector] public bool bloqueado = false;
+
+
     private Rigidbody rb;
     private Vector2 moveDirection;
     private bool estaMoviendo = false;
@@ -56,10 +59,11 @@ public class PersonajeMovimiento_02 : MonoBehaviour
 
     private void Update()
     {
+        if (bloqueado) return; // ignorar input de rotación también
+        
         moveDirection = move.action.ReadValue<Vector2>();
         estaMoviendo = moveDirection.magnitude > 0.1f;
 
-        // La rotación visual se actualiza en Update
         if (estaMoviendo && camaraTransform != null)
         {
             Vector3 forward = camaraTransform.forward;
@@ -83,10 +87,19 @@ public class PersonajeMovimiento_02 : MonoBehaviour
             rotacionObjetivo,
             velocidadGiro * Time.deltaTime
         );
-}
+    }
 
     private void FixedUpdate()
     {
+        if (bloqueado)
+        {
+            // Congelar velocidad horizontal completamente
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+            return;
+        }
+        // Gravedad extra
+        rb.AddForce(Physics.gravity * 1.4f, ForceMode.Acceleration);
+
         Mover();
     }
 
@@ -119,6 +132,8 @@ public class PersonajeMovimiento_02 : MonoBehaviour
 
     private void SaltarAccion(InputAction.CallbackContext context)
     {
+        if (bloqueado) return;
+    
         if (EnSuelo())
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);

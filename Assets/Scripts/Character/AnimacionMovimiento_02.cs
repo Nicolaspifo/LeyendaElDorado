@@ -7,7 +7,7 @@ public class AnimacionMovimiento_02 : MonoBehaviour
 
     public InputActionReference movimiento;
     public InputActionReference saltar;
-    public InputActionReference interactuar;
+    public InputActionReference recolectar;
     public InputActionReference correr; 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class AnimacionMovimiento_02 : MonoBehaviour
         anim.SetBool("saltar", saltar.action.IsPressed());
 
         // Recoger / Interactuar
-        anim.SetBool("recoger", interactuar.action.IsPressed());
+        anim.SetBool("recoger", recolectar.action.IsPressed());
 
         // Acelerar animación al correr
         if (estaMoviendo && estaCorriendo)

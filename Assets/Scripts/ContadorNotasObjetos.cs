@@ -11,17 +11,17 @@ public class ContadorNotasObjetos : MonoBehaviour
     public GameObject UIDiarioNotas;
     public TMP_Text contadorNotasText;
     public GameObject UITextoNotificacionNotas;
+    public MenuAyuda menuAyuda;
+
 
     [Header("Escena Final")]
     public GameObject UIEscenafinal;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -72,6 +72,10 @@ public class ContadorNotasObjetos : MonoBehaviour
         }
 
         Debug.Log("Nota recogida. Total: " + ContadorNotas);
+
+        // Notificación de ayuda
+        if (menuAyuda != null)
+            menuAyuda.MostrarNotificacionObjeto();
     }
 
     IEnumerator DesactivarNotificacion(int CantidadNotas)

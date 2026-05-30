@@ -10,6 +10,7 @@ public class RecoleccionNotas : MonoBehaviour
     public Transform player; // Referencia al player
 
     public ContadorNotasObjetos contador;
+    public MenuAyuda menuAyuda;
 
     [Header("Audio")]
     public AudioClip sonidoBoton;
@@ -28,24 +29,16 @@ public class RecoleccionNotas : MonoBehaviour
 
     private void TryInteract()
     {
-        float radio = 1f;
+        Collider[] colliders = Physics.OverlapSphere(player.position, RangoDeInteraccion);
 
-        // Empezar un poco detrás del jugador
-        Vector3 origen = player.position - player.forward * radio * 1f;
-
-        Ray ray = new Ray(origen, player.forward);
-
-        RaycastHit hit;
-
-        if (Physics.SphereCast(ray, radio, out hit, RangoDeInteraccion + radio))
+        foreach (Collider col in colliders)
         {
-            if (hit.collider.gameObject == gameObject)
+            if (col.gameObject == gameObject)
             {
                 contador.AgregarNota();
-
                 ReproducirSonido();
-
                 Destroy(gameObject);
+                return;
             }
         }
     }
@@ -59,6 +52,16 @@ public class RecoleccionNotas : MonoBehaviour
         else if (sonidoBoton != null && SimpleAudioSystem.Instance != null)
         {
             SimpleAudioSystem.Instance.sfxSource.PlayOneShot(sonidoBoton);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Verificar que sea el jugador
+        if (other.transform == player)
+        {
+            if (menuAyuda != null)
+                menuAyuda.MostrarAyudaRecolectarSiNecesario();
         }
     }
 }

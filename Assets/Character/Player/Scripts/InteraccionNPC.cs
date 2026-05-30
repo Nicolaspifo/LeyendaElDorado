@@ -13,6 +13,8 @@ public class InteraccionNPC : MonoBehaviour
     public GameObject dialogCanvas;
     public TMP_Text nameText;
     public TMP_Text dialogText;
+    public InputActionReference avanzarDialogo1; // Espacio
+    public InputActionReference avanzarDialogo2; // Flecha derecha/abajo
 
     private NPC currentNPC;
     private int dialogIndex = 0;
@@ -24,11 +26,16 @@ public class InteraccionNPC : MonoBehaviour
     private bool isTyping = false;
 
     public NavegacionInventario navegacionInventario;
+    public PersonajeMovimiento_02 movimiento;
+
 
     void Start()
     {
         if (navegacionInventario == null)
             navegacionInventario = FindFirstObjectByType<NavegacionInventario>();
+            
+        if (movimiento == null)
+            movimiento = FindFirstObjectByType<PersonajeMovimiento_02>();
     }
 
     private void OnEnable()
@@ -46,32 +53,27 @@ public class InteraccionNPC : MonoBehaviour
 
     void Update()
     {
-        if (InteractuarDialogo.action.WasPressedThisFrame())
+        bool interactuar = InteractuarDialogo.action.WasPressedThisFrame();
+        bool avanzar1    = avanzarDialogo1 != null && avanzarDialogo1.action.WasPressedThisFrame();
+        bool avanzar2    = avanzarDialogo2 != null && avanzarDialogo2.action.WasPressedThisFrame();
+
+        if (interactuar || avanzar1 || avanzar2)
         {
             if (isTalking)
-            {
                 NextDialog();
-            }
-            else
-            {
+            else if (interactuar) // solo Enter/E abre el diálogo, no espacio
                 TryInteract();
-            }
         }
 
         if (isTalking && currentNPC != null)
         {
             float distance = Vector3.Distance(transform.position, currentNPC.transform.position);
-
-            if (distance > interactionRange + 1f) // margen extra opcional
-            {
+            if (distance > interactionRange + 1f)
                 EndDialog();
-            }
         }
 
         if (Cancelar.action.WasPressedThisFrame())
-        {
             EndDialog();
-        }
     }
 
      public NPC GetNPCDetectado()
@@ -81,7 +83,6 @@ public class InteraccionNPC : MonoBehaviour
 
         RaycastHit hit;
 
-        // ✅ SphereCast
         if (Physics.SphereCast(origin, radio, transform.forward, out hit, interactionRange))
         {
             NPC npc = hit.collider.GetComponent<NPC>();
@@ -89,7 +90,6 @@ public class InteraccionNPC : MonoBehaviour
                 return npc;
         }
 
-        // ✅ Fallback: cercanos + dirección
         Collider[] hits = Physics.OverlapSphere(transform.position, interactionRange);
 
         float mejorDot = 0.5f;
@@ -136,18 +136,20 @@ public class InteraccionNPC : MonoBehaviour
         currentNPC = npc;
         dialogIndex = 0;
         isTalking = true;
-
         dialogCanvas.SetActive(true);
         nameText.text = npc.npcName;
 
+        if (movimiento != null) movimiento.bloqueado = true;
+
+        IndicadorNPC indicador = npc.GetComponent<IndicadorNPC>();
+        if (indicador != null) indicador.dialogoActivo = true;
+
         ShowCurrentDialog();
         currentNPC.ReproducirSonidoDialogo();
-
     }
 
     void NextDialog()
     {
-        // 👇 si aún está escribiendo → termina instantáneamente
         if (isTyping)
         {
             if (typingCoroutine != null)
@@ -192,6 +194,14 @@ public class InteraccionNPC : MonoBehaviour
 
     void EndDialog()
     {
+        if (currentNPC != null)
+        {
+            IndicadorNPC indicador = currentNPC.GetComponent<IndicadorNPC>();
+            if (indicador != null) indicador.dialogoActivo = false;
+        }
+
+        if (movimiento != null) movimiento.bloqueado = false;
+
         isTalking = false;
         dialogCanvas.SetActive(false);
     }

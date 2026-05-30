@@ -14,6 +14,8 @@ public class MenuPrincipal : MonoBehaviour
     public Image[] imagenesIntroduccion;           // Array de las 4 imágenes de introducción
     public TextMeshProUGUI textoPresionarTecla;    // Texto "Presiona ESPACIO para continuar"
     public float velocidadFadeIntro = 1.0f;        // Velocidad del fade in de la intro
+    public float tiempoMinimoPorImagenIntro = 2f; // ← nuevo
+    private float tiempoMostradoImagenIntro = 0f;
 
     [Header("Variación de Color del Fondo")]
     public Image imagenFondoMenuPrincipal;
@@ -24,12 +26,27 @@ public class MenuPrincipal : MonoBehaviour
     [Header("Fade de Escena")]
     public Image imagenFadeNegro;
     public float velocidadFadeEscena = 1f;
-    // Referencia a los gestores
-    private bool mostrandoIntroduccion = false;  // Nueva variable para controlar la intro
+
+    [Header("Créditos")]
+    public GameObject panelCreditos;      // Panel padre que contiene todo
+    public GameObject subpanel1;          // Primer panel de créditos
+    public GameObject subpanel2;          // Segundo panel de créditos
+    public GameObject botonSiguiente;     // Botón siguiente
+    public GameObject botonAnterior;      // Botón anterior
+    public float velocidadFadeCreditos = 1.5f;
+
+    private int panelCreditosActual = 1;
+
+    public void AbrirCreditos()
+    {
+        StartCoroutine(FadeACreditos());
+    }
     
-    // Variables para el sistema de introducción secuencial
-    private int imagenActualIntro = 0;  // Índice de la imagen actual
-    private bool mostrandoImagenIntro = false;  // Para evitar múltiples pulsaciones durante la animación
+    // Referencia a los gestores
+    private bool mostrandoIntroduccion = false;
+    
+    private int imagenActualIntro = 0; 
+    private bool mostrandoImagenIntro = false; 
     
     private void Start()
     {
@@ -92,7 +109,6 @@ public class MenuPrincipal : MonoBehaviour
         }
     }
     
-    // NUEVO: Configurar todas las imágenes de introducción como invisibles
     private void ConfigurarImagenesIntroduccion()
     {
         if (imagenesIntroduccion != null && imagenesIntroduccion.Length > 0)
@@ -181,54 +197,47 @@ public class MenuPrincipal : MonoBehaviour
     // Método para mostrar la siguiente imagen en la secuencia
     private void SiguienteImagenIntroduccion()
     {
-        // Si estamos mostrando una imagen, ignorar la entrada
         if (mostrandoImagenIntro) return;
-        
-        // Si ya mostramos todas las imágenes, continuar al juego
+
+        // Mínimo 2 segundos por imagen
+        if (Time.time < tiempoMostradoImagenIntro + tiempoMinimoPorImagenIntro) return;
+
         if (imagenActualIntro >= imagenesIntroduccion.Length)
         {
             ContinuarAlJuego();
             return;
         }
-        
-        // Mostrar la imagen actual
+
         StartCoroutine(MostrarImagenConFadeIn(imagenActualIntro));
     }
-    
+        
     // Corrutina para mostrar una imagen específica con fade in
     private IEnumerator MostrarImagenConFadeIn(int indiceImagen)
     {
         mostrandoImagenIntro = true;
-        
+
         if (indiceImagen < imagenesIntroduccion.Length && imagenesIntroduccion[indiceImagen] != null)
         {
             Image imagenActual = imagenesIntroduccion[indiceImagen];
-            
-            // Fade in de la imagen
+
             float tiempo = 0f;
             while (tiempo < 1f)
             {
                 tiempo += Time.deltaTime * velocidadFadeIntro;
-                
                 Color colorImg = imagenActual.color;
                 colorImg.a = Mathf.Clamp01(tiempo);
                 imagenActual.color = colorImg;
-                
                 yield return null;
             }
-            
-            // Asegurar alpha completo
+
             Color colorImgFinal = imagenActual.color;
             colorImgFinal.a = 1f;
             imagenActual.color = colorImgFinal;
         }
-        
-        // Incrementar contador para la siguiente imagen
+
+        tiempoMostradoImagenIntro = Time.time; // ← registrar cuando termina el fade
         imagenActualIntro++;
-        
-        // Actualizar texto según el progreso
         ActualizarTextoProgreso();
-        
         mostrandoImagenIntro = false;
     }
     
@@ -243,7 +252,7 @@ public class MenuPrincipal : MonoBehaviour
             }
             else
             {
-                textoPresionarTecla.text = "¿Estás listo para comenzar tu aventura?";
+                textoPresionarTecla.text = "Estás listo para comenzar tu aventura?";
             }
         }
     }
@@ -291,6 +300,101 @@ public class MenuPrincipal : MonoBehaviour
 
         SceneManager.LoadScene("EscenaPrincipal");
     }
+
+    private IEnumerator FadeACreditos()
+    {
+        // Fade out del menú principal
+        CanvasGroup cgMenu = panelMenuPrincipal.GetComponent<CanvasGroup>();
+        if (cgMenu == null) cgMenu = panelMenuPrincipal.AddComponent<CanvasGroup>();
+
+        float t = 1f;
+        while (t > 0f)
+        {
+            t -= Time.deltaTime * velocidadFadeCreditos;
+            cgMenu.alpha = Mathf.Clamp01(t);
+            yield return null;
+        }
+        cgMenu.alpha = 0f;
+        panelMenuPrincipal.SetActive(false);
+        cgMenu.alpha = 1f; // resetear para cuando vuelva
+
+        // Mostrar créditos
+        panelCreditosActual = 1;
+        panelCreditos.SetActive(true);
+        ActualizarSubpaneles();
+
+        // Fade in de créditos
+        CanvasGroup cgCreditos = panelCreditos.GetComponent<CanvasGroup>();
+        if (cgCreditos == null) cgCreditos = panelCreditos.AddComponent<CanvasGroup>();
+        cgCreditos.alpha = 0f;
+
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * velocidadFadeCreditos;
+            cgCreditos.alpha = Mathf.Clamp01(t);
+            yield return null;
+        }
+        cgCreditos.alpha = 1f;
+    }
+
+    public void SiguienteCreditos()
+    {
+        panelCreditosActual = 2;
+        ActualizarSubpaneles();
+    }
+
+    public void AnteriorCreditos()
+    {
+        panelCreditosActual = 1;
+        ActualizarSubpaneles();
+    }
+
+    public void CerrarCreditos()
+    {
+        StartCoroutine(FadeVueltaMenu());
+    }
+
+    private IEnumerator FadeVueltaMenu()
+    {
+        // Fade out créditos
+        CanvasGroup cgCreditos = panelCreditos.GetComponent<CanvasGroup>();
+        if (cgCreditos == null) cgCreditos = panelCreditos.AddComponent<CanvasGroup>();
+
+        float t = 1f;
+        while (t > 0f)
+        {
+            t -= Time.deltaTime * velocidadFadeCreditos;
+            cgCreditos.alpha = Mathf.Clamp01(t);
+            yield return null;
+        }
+        panelCreditos.SetActive(false);
+
+        // Fade in menú
+        panelMenuPrincipal.SetActive(true);
+        CanvasGroup cgMenu = panelMenuPrincipal.GetComponent<CanvasGroup>();
+        if (cgMenu == null) cgMenu = panelMenuPrincipal.AddComponent<CanvasGroup>();
+        cgMenu.alpha = 0f;
+
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * velocidadFadeCreditos;
+            cgMenu.alpha = Mathf.Clamp01(t);
+            yield return null;
+        }
+        cgMenu.alpha = 1f;
+    }
+
+    private void ActualizarSubpaneles()
+    {
+        subpanel1.SetActive(panelCreditosActual == 1);
+        subpanel2.SetActive(panelCreditosActual == 2);
+        botonSiguiente.SetActive(panelCreditosActual == 1);
+        botonAnterior.SetActive(panelCreditosActual == 2);
+    }
+
+
     // Métodos de navegación
     // Ahora muestra la introducción en lugar de ir directamente al juego
     public void IniciarPartido()
